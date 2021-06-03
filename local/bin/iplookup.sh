@@ -18,7 +18,11 @@ else
   echo $SHORT_INFO
   # Get the range info from the ASN database:
   if [[ -f $ASN_DB_NAME ]]; then
-    ASN_SUBNET=`mmdbinspect -db $ASN_DB_NAME $1 | jq '.[0].Records[0].Network' | sed 's#"##g'`
+    #ASN_SUBNET=`mmdbinspect -db $ASN_DB_NAME $1 | jq '.[0].Records[0].Network' | sed 's#"##g'`
+    ASN=`mmdbinspect -db $ASN_DB_NAME $1`
+    ASN_SUBNET=`echo "$ASN" | jq '.[0].Records[0].Network' | sed 's#"##g'`
+    AS_NAME=`echo "$ASN" | jq '.[0].Records[0].Record.autonomous_system_organization' | sed 's#"##g'`
+    echo "AS belongs to: ${AS_NAME}"
     echo "ASN Subnet: ${ASN_SUBNET}"
   fi
   # Get the range registered with RIPE
