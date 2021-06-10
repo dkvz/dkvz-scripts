@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Requires mmdbinspect, jq, whois and GeoIP databases
 
