@@ -10,3 +10,4 @@ Should be set in bashrc or default values will apply (use `export VARIABLE_NAME=
 
 # TODO
 - [x] IP location script: add a lookup in the ASN DB -> Done but that info seems completely worthless.
+- [ ] IP location script: seems to be a bug with mmdbinspect and the ASN database, the range is wrong (at the very least, client bits are not zeroed).
