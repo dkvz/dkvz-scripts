@@ -2,11 +2,15 @@
 
 set -e
 
+source "./conf/my-env.sh"
+
 TARGET="${HOME}/.local/bin"
+CONF_DIR="${HOME}/.local/etc"
 
 read -p "Install in ${TARGET}? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo ""
+  mkdir -p $CONF_DIR
   mkdir -pv $TARGET
   # TODO Check and warn if GeoIP DB files are absent
   ln -sfv "$PWD/local/bin/local-iplookup.sh" "$TARGET/local-iplookup"
