@@ -14,4 +14,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/mmdbinspect" "$TARGET/mmdbinspect"
   ln -sfv "$PWD/local/bin/n.sh" "$TARGET/n"
   ln -sfv "$PWD/local/bin/e.sh" "$TARGET/e"
+  ln -sfv "$PWD/local/bin/whatismyip.sh" "$TARGET/whatismyip"
 fi
