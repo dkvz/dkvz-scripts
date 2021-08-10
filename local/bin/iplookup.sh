@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export DB_DIR=/usr/share/GeoIP
-export ASN_DB_NAME=GeoLite2-ASN.mmdb
-export CITY_DB_NAME=GeoLite2-City.mmdb
+# We need the shared variables:
+source init-iplookup.sh
 
 if [[ `type -P "iplookup-node"` ]]; then
   iplookup-node "$@"

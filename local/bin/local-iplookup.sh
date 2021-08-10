@@ -2,9 +2,12 @@
 
 # Requires mmdbinspect, jq, whois and GeoIP databases
 
-DB_DIR=/usr/share/GeoIP
-ASN_DB_NAME=GeoLite2-ASN.mmdb
-CITY_DB_NAME=GeoLite2-City.mmdb
+# We need the shared variables:
+source init-iplookup.sh
+#DB_DIR=/usr/share/GeoIP
+#ASN_DB_NAME=GeoLite2-ASN.mmdb
+#CITY_DB_NAME=GeoLite2-City.mmdb
+
 ASN_DB_PATH=${DB_DIR}/${ASN_DB_NAME}
 CITY_DB_PATH=${DB_DIR}/${CITY_DB_NAME}
 

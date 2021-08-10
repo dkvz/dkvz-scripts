@@ -2,8 +2,6 @@
 
 set -e
 
-source "./conf/my-env.sh"
-
 TARGET="${HOME}/.local/bin"
 CONF_DIR="${HOME}/.local/etc"
 
@@ -13,6 +11,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   mkdir -p $CONF_DIR
   mkdir -pv $TARGET
   # TODO Check and warn if GeoIP DB files are absent
+  ln -sfv "$PWD/local/bin/init-iplookup.sh" "$TARGET/init-iplookup.sh"
   ln -sfv "$PWD/local/bin/local-iplookup.sh" "$TARGET/local-iplookup"
   ln -sfv "$PWD/local/bin/iplookup.sh" "$TARGET/iplookup"
   ln -sfv "$PWD/local/bin/mmdbinspect" "$TARGET/mmdbinspect"
