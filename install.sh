@@ -13,6 +13,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   # TODO Check and warn if GeoIP DB files are absent
   ln -sfv "$PWD/local/bin/init-iplookup.sh" "$TARGET/init-iplookup.sh"
   ln -sfv "$PWD/local/bin/geoip-update-create-env.sh" "$TARGET/geoip-update-create-env"
+  ln -sfv "$PWD/local/bin/geoip-update.sh" "$TARGET/geoip-update"
   ln -sfv "$PWD/local/bin/local-iplookup.sh" "$TARGET/local-iplookup"
   ln -sfv "$PWD/local/bin/iplookup.sh" "$TARGET/iplookup"
   ln -sfv "$PWD/local/bin/mmdbinspect" "$TARGET/mmdbinspect"
