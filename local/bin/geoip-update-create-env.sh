@@ -9,10 +9,33 @@
 CONF_DIR="${HOME}/.local/etc"
 # env file name:
 GEO_UPDATE_ENV_FILE="geoip.env"
-# Get the shared IP lookup vars for default values:
-source init-iplookup.sh
+GEO_EDITIONS_DEFAULT="GeoIP2-City GeoIP2-ASN"
+GEO_UPDATE_ENV_FULLPATH=${CONF_DIR}/${GEO_UPDATE_ENV_FILE}
 
+echo "The current script is aimed to create an env file for the geoip-update script, which requires docker"
+echo "Would create the file:"
+echo ${GEO_UPDATE_ENV_FULLPATH}
+echo ""
+
+read -n 1 -p "Do you want to continue? [n] " RESP
+if ! [[ $RESP =~ ^[yY] ]]; then
+  exit 0
+fi
+
+echo ""
+read -p "Enter your account ID: " GEOIPUPDATE_ACCOUNT_ID
 # The -s flag tells read that it's supposed to be a secret
-read -s -p 'Enter GeoIP licence key:' GEO_KEY
+read -s -p "Enter GeoIP licence key: " GEOIPUPDATE_LICENSE_KEY
+echo ""
+read -p "Enter space separated edition IDs [${GEO_EDITIONS_DEFAULT}]: " GEOIPUPDATE_EDITION_INPUT
 
-echo "SCRIPT ISN'T FINISHED"
+# We can probably do this as a single line above.
+GEOIPUPDATE_EDITION_ID=${GEOIPUPDATE_EDITION_INPUT:-$GEO_EDITIONS_DEFAULT}
+
+cat > ${GEO_UPDATE_ENV_FULLPATH} <<EOL
+GEOIPUPDATE_ACCOUNT_ID=$GEOIPUPDATE_ACCOUNT_ID
+GEOIPUPDATE_LICENSE_KEY=$GEOIPUPDATE_LICENSE_KEY
+GEOIPUPDATE_EDITION_ID=$GEOIPUPDATE_EDITION_ID
+EOL
+
+echo "Written ${GEO_UPDATE_ENV_FULLPATH}"
