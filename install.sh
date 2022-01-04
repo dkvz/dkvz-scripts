@@ -22,4 +22,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/whatismyip.sh" "$TARGET/whatismyip"
   ln -sfv "$PWD/local/bin/zdir.sh" "$TARGET/zdir"
   ln -sfv "$PWD/local/bin/check-https.sh" "$TARGET/check-https"
+  ln -sfv "$PWD/local/bin/vpn.sh" "$TARGET/vpn"
 fi
