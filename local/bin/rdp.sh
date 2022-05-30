@@ -11,6 +11,12 @@
 # home directory "~" character.
 PROFILES_PATH=~/.local/share/remmina/
 
+if [[ -z "$1" ]]; then
+  echo "No profile name provided, opening remmina..."
+  remmina > /dev/null 2>&1 &
+  exit 0
+fi
+
 PROFILE=`grep -rl "name=$1" $PROFILES_PATH | head -n 1`
 # Check if a profile was found:
 if [[ -z "$PROFILE" ]]; then
