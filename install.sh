@@ -25,4 +25,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/vpn.sh" "$TARGET/vpn"
   ln -sfv "$PWD/local/bin/random-text.sh" "$TARGET/random-text"
   ln -sfv "$PWD/local/bin/oh.sh" "$TARGET/oh"
+  ln -sfv "$PWD/local/bin/rdp.sh" "$TARGET/rdp"
 fi
