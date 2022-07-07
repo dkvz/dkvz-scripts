@@ -18,7 +18,7 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
-if [[ `type -P "iplookup-node"` ]]; then
+if [[ `type -P "yt-dlp"` ]]; then
   yt-dlp -f m4a "$1"
   if [ ! $? -eq 0 ]; then
     echo "Failed to download m4a format"
