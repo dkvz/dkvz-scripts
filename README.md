@@ -4,6 +4,7 @@
 Should be set in bashrc or default values will apply (use `export VARIABLE_NAME=value`).
 
 * DELETEME_FILE - Path to the throwable notepad text file (see n.sh)
+* WEB_BROWSER - Path to browser to use, usually defaults to `xdg-open`
 
 # Installing
 The script `install.sh` creates links to your working copy of this repo into `./local/bin`.

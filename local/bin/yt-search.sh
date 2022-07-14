@@ -6,6 +6,9 @@ usage() {
   echo "Opens browser for Youtube search"
 }
 
+DEFAULT_BROWSER=xdg-open
+BROWSER="${WEB_BROWSER:-$DEFAULT_BROWSER}"
+
 if [[ -z "$1" ]]; then
   echo "No query provided."
   usage
@@ -17,4 +20,4 @@ fi
 # instead of the URL encoded equivalent
 CLEAN_URL=$(sed "s#\\s#+#g" <<< $@)
 
-xdg-open "https://youtube.com/results?search_query=$CLEAN_URL"
+$BROWSER "https://youtube.com/results?search_query=$CLEAN_URL"
