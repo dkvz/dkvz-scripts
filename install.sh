@@ -11,6 +11,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   mkdir -p $CONF_DIR
   mkdir -pv $TARGET
   # TODO Check and warn if GeoIP DB files are absent
+  # TODO This should be a loop
   ln -sfv "$PWD/local/bin/init-iplookup.sh" "$TARGET/init-iplookup.sh"
   ln -sfv "$PWD/local/bin/geoip-update-create-env.sh" "$TARGET/geoip-update-create-env"
   ln -sfv "$PWD/local/bin/geoip-update.sh" "$TARGET/geoip-update"
@@ -29,4 +30,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/ssh-old.sh" "$TARGET/ssh-old"
   ln -sfv "$PWD/local/bin/yt-audio.sh" "$TARGET/yt-audio"
   ln -sfv "$PWD/local/bin/yt-search.sh" "$TARGET/yt-search"
+  ln -sfv "$PWD/local/bin/ghub.sh" "$TARGET/ghub"
 fi
