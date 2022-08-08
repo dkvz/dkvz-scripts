@@ -49,4 +49,4 @@ if [[ -z $1 ]]; then
   exit 1
 fi
 
-"$MPLAYER" $ARGS $1 > /dev/null 2>&1 & 
+"$MPLAYER" $ARGS "$1" > /dev/null 2>&1 & 
