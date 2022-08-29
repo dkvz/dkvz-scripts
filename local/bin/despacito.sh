@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Using this as a reference for frequencies: https://pages.mtu.edu/~suits/notefreqs.html
+# Using this as a reference for frequencies:
+# https://pages.mtu.edu/~suits/notefreqs.html
 
 CS4=277
 D4=294
@@ -12,6 +13,9 @@ B4=494
 CS5=523
 D5=587
 E5=659
+
+# TODO:
+# - Might need sleep after some of the long notes
 
 verse1() {
   beep -f $B4 -l 600 -n -f $FS4 -l 200 -n \
@@ -30,4 +34,24 @@ verse1() {
 }
 
 verse1
-sleep 1
+sleep .9
+
+# Verse 2
+beep -f $B4 -l 650; sleep .2
+beep -f $B4 -l 200 -n -f $B4 -l 200 -n \
+  -f $CS5 -l 200 -n -f $D5 -l 400 -n \
+  -f $D5 -l 400 -n -f $CS5 -l 200 -n \
+  -f $D5 -l 400 -n -f $D5 -l 400 -n \
+  -f $CS5 -l 200
+# Not super sure about that one:
+beep -f $B4 -l 600; sleep .4
+beep -f $B4 -l 100 -n -f $A4 -l 100 -n \
+  -f $B4 -l 100 -n -f $CS5 -l 100 -n \
+  -f $D5 -l 400 -n -f $D5 -l 400 -n \
+  -f $CS5 -l 200 -n -f $D5 -l 400 -n \
+  -f $D5 -l 400 -n -f $E5 -l 200
+beep -f $A4 -l 600; sleep .2
+
+
+
+
