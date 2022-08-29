@@ -51,7 +51,22 @@ beep -f $B4 -l 100 -n -f $A4 -l 100 -n \
   -f $CS5 -l 200 -n -f $D5 -l 400 -n \
   -f $D5 -l 400 -n -f $E5 -l 200
 beep -f $A4 -l 600; sleep .2
+beep -f $A4 -l 100 -n -f $A4 -l 100 -n \
+  -f $A4 -l 100 -n -f $A4 -l 100 -n \
+  -f $D5 -l 100 -n -f $A4 -l 100 -n \
+  -f $D5 -l 100 -n -f $A4 -l 100 -n \
+  -f $D5 -l 400 -n -f $E5 -l 200 -n \
+  -f $C5 -l 600
 
+sleep .2
+festival --tts <<< "Oh yeah"
+sleep .2
 
-
-
+# Verse 3
+beep -f $B4 -l 600; sleep .4
+beep -f $B4 -l 200 -n -f $FS4 -l 200 -n \
+  -f $B4 -l 200 -n -f $DS5 -l 200 -n \
+  -f $D5 -l 400 -n -f $DS5 -l 400 -n \
+  -f $D5 -l 400 -n -f $DS5 -l 400 -n \
+  -f $D5 -l 400 -n -f $DS5 -l 200
+beep -f $B4 -l 600; sleep .4
