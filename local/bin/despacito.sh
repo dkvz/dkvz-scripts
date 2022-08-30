@@ -18,19 +18,19 @@ E5=659
 # - Might need sleep after some of the long notes
 
 verse1() {
-  beep -f $B4 -l 600 -n -f $FS4 -l 200 -n \
+  beep -f $B4 -l 700 -n -f $FS4 -l 200 -n \
     -f $B4 -l 200 -n -f $CS5 -l 200 -n \
     -f $D5 -l 200 -n -f $E5 -l 200 -n \
     -f $D5 -l 200 -n -f $CS5 -l 300 -n \
     -f $B4 -l 200 -n -f $A4 -l 200 -n \
-    -f $G4 -l 400 -n -f $D5 -l 200 -n \
-    -f $D5 -l 400
+    -f $G4 -l 400 -n -f $D5 -l 400 -n \
+    -f $D5 -l 600
   sleep .5
-  beep -f $D5 -l 300 -n -f $A4 -l 150 -n \
-    -f $D5 -l 300 -n -f $A4 -l 150 -n \
-    -f $D5 -l 300 -n -f $A4 -l 150 -n \
-    -f $D5 -l 300 -n -f $E5 -l 150 -n \
-    -f $CS4 -l 600
+  beep -f $D5 -l 300 -n -f $A4 -l 200 -n \
+    -f $D5 -l 300 -n -f $A4 -l 200 -n \
+    -f $D5 -l 300 -n -f $A4 -l 200 -n \
+    -f $D5 -l 300 -n -f $E5 -l 200 -n \
+    -f $CS5 -l 600
 }
 
 verse1
