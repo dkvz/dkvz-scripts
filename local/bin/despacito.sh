@@ -65,6 +65,7 @@ verse1
 sleep .9
 
 # Verse 2
+
 beep -f $B4 -l 650; sleep .2
 beep -f $B4 -l 200 -n -f $B4 -l 200 -n \
  -f $CS5 -l 200 -n -f $D5 -l 200 -n \
@@ -90,9 +91,10 @@ beep -f $A4 -l 100 -n -f $A4 -l 100 -n \
 # no time to investigate.
 #sleep .2
 #festival --tts <<< "Oh yeah"
-#sleep .2
+sleep .4
 
 # Verse 3
+
 beep -f $B4 -l 600; sleep .4
 beep -f $B4 -l 200 -n -f $FS4 -l 200 -n \
   -f $B4 -l 200 -n -f $CS5 -l 200 -n \
