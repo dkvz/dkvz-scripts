@@ -33,4 +33,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/ghub.sh" "$TARGET/ghub"
   ln -sfv "$PWD/local/bin/p.sh" "$TARGET/p"
   ln -sfv "$PWD/local/bin/despacito.sh" "$TARGET/despacito"
+  ln -sfv "$PWD/local/bin/my.sh" "$TARGET/my"
 fi
