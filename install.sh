@@ -35,4 +35,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/despacito.sh" "$TARGET/despacito"
   ln -sfv "$PWD/local/bin/my.sh" "$TARGET/my"
   ln -sfv "$PWD/local/bin/gen-password.sh" "$TARGET/gen-password"
+  ln -sfv "$PWD/local/bin/timestamp.sh" "$TARGET/timestamp"
 fi
