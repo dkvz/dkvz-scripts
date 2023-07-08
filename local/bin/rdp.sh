@@ -17,7 +17,7 @@ if [[ -z "$1" ]]; then
   exit 0
 fi
 
-PROFILE=`grep -rl "name=$1" $PROFILES_PATH | head -n 1`
+PROFILE=`grep -rl "name=$1" $PROFILES_PATH | sort | head -n 1`
 # Check if a profile was found:
 if [[ -z "$PROFILE" ]]; then
   echo "Profile wasn't found - Remember it's case sensitive!"
