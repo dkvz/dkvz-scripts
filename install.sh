@@ -28,6 +28,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/oh.sh" "$TARGET/oh"
   ln -sfv "$PWD/local/bin/rdp.sh" "$TARGET/rdp"
   ln -sfv "$PWD/local/bin/ssh-old.sh" "$TARGET/ssh-old"
+  ln -sfv "$PWD/local/bin/scp-old.sh" "$TARGET/scp-old"
   ln -sfv "$PWD/local/bin/yt-audio.sh" "$TARGET/yt-audio"
   ln -sfv "$PWD/local/bin/yt-search.sh" "$TARGET/yt-search"
   ln -sfv "$PWD/local/bin/ghub.sh" "$TARGET/ghub"
