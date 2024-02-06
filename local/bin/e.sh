@@ -8,7 +8,7 @@
 # - dolphin
 # - explorer (Windows)
 
-for expl in nautilus nemo thunar dolphin explorer;
+for expl in nautilus nemo thunar caja dolphin explorer;
 do
   if type "$expl" &> /dev/null; then
     "$expl" . &> /dev/null &

@@ -4,6 +4,7 @@
 Should be set in bashrc or default values will apply (use `export VARIABLE_NAME=value`).
 
 * DELETEME_FILE - Path to the throwable notepad text file (see n.sh)
+* GUI_TEXT_EDITOR - Path to a graphical text editor to use
 * WEB_BROWSER - Path to browser to use, usually defaults to `xdg-open`
 
 # Installing
