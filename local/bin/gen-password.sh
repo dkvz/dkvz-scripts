@@ -5,7 +5,10 @@
 
 # TODO: Allow making passwords with select special chars.
 
-PLEN="${1:-18}"
+# Randomizing default password len so it's harder
+# to build hashcat masks against these:
+DEF_LEN=$(($RANDOM%(21-14+1)+14))
+PLEN="${1:-$DEF_LEN}"
 if [[ ! $PLEN -gt 1 ]]; then
   echo "Invalid password length."
   echo "Please provide a number as the first argument."
