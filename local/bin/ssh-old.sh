@@ -2,4 +2,4 @@
 # Currently always assumes using RSA will work, RSS 
 # might be needed in some cases.
 
-ssh -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 "$@"
+ssh -oPubkeyAcceptedKeyTypes=+ssh-rsa -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 "$@"
