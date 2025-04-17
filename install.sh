@@ -41,4 +41,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/mysql-old.sh" "$TARGET/mysql-old"
   ln -sfv "$PWD/local/bin/webscan.sh" "$TARGET/webscan"
   ln -sfv "$PWD/local/bin/t.sh" "$TARGET/t"
+  ln -sfv "$PWD/local/bin/switch-theme.sh" "$TARGET/switch-theme"
 fi
