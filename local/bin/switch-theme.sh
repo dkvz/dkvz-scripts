@@ -2,7 +2,12 @@
 
 # TODO: Also change the tmux theme
 
+# Adding quotes will prevent ~ expansion
 VIMRC_PATH=~/.vimrc
+VSCODE_PATH=~/.config/Code/User/settings.json
+# The extensions have to be installed, of course:
+VSCODE_DARK="Gruvbox Material Dark"
+VSCODE_LIGHT="Catppuccin Latte"
 CURRENT=$(gsettings get org.gnome.desktop.interface color-scheme)
 GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
 ICON_THEME=$(gsettings get org.gnome.desktop.interface icon-theme)
@@ -29,12 +34,14 @@ if [[ "$CURRENT" != "'prefer-dark'" ]]; then
   N_GTK_THEME=$(replace_light_dark "$GTK_THEME" "light" "dark")
   N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "light" "dark")
   sed -i "s#=light#=dark#" "$VIMRC_PATH"
+  sed -i "s#$VSCODE_LIGHT#$VSCODE_DARK#" "$VSCODE_PATH"
 else
   # Switching to dark mode
   N_CURRENT=$(replace_light_dark "$CURRENT" "dark" "light")
   N_GTK_THEME=$(replace_light_dark "$GTK_THEME" "dark" "light")
   N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "dark" "light")
   sed -i "s#=dark#=light#" "$VIMRC_PATH"
+  sed -i "s#$VSCODE_DARK#$VSCODE_LIGHT#" "$VSCODE_PATH"
 fi
 
 # Set the new values for Gnome:
