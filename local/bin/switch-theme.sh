@@ -12,6 +12,11 @@ CURRENT=$(gsettings get org.gnome.desktop.interface color-scheme)
 GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
 ICON_THEME=$(gsettings get org.gnome.desktop.interface icon-theme)
 
+if [[ ! -z "$DKVZ_THEME" ]]; then
+  echo "Specific theme set, theme switching disabled"
+  exit 2
+fi
+
 replace_light_dark () {
   sed "s#$2#$3#" <<< "$1"
 }
