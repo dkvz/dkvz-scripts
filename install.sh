@@ -8,8 +8,8 @@ CONF_DIR="${HOME}/.local/etc"
 read -p "Install in ${TARGET}? " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo ""
-  mkdir -p $CONF_DIR
-  mkdir -pv $TARGET
+  mkdir -p "$CONF_DIR"
+  mkdir -pv "$TARGET"
   # TODO Check and warn if GeoIP DB files are absent
   # TODO This should be a loop
   ln -sfv "$PWD/local/bin/init-iplookup.sh" "$TARGET/init-iplookup.sh"
@@ -42,4 +42,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/webscan.sh" "$TARGET/webscan"
   ln -sfv "$PWD/local/bin/t.sh" "$TARGET/t"
   ln -sfv "$PWD/local/bin/switch-theme.sh" "$TARGET/switch-theme"
+  ln -sfv "$PWD/local/bin/pwc.sh" "$TARGET/pwc"
 fi
