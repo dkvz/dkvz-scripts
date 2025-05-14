@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # TODO: Also change the tmux theme
+# and the neovim one
 
 # Adding quotes will prevent ~ expansion
 VIMRC_PATH=~/.vimrc
@@ -12,7 +13,7 @@ CURRENT=$(gsettings get org.gnome.desktop.interface color-scheme)
 GTK_THEME=$(gsettings get org.gnome.desktop.interface gtk-theme)
 ICON_THEME=$(gsettings get org.gnome.desktop.interface icon-theme)
 
-if [[ ! -z "$DKVZ_THEME" ]]; then
+if [[ -n "$DKVZ_THEME" ]]; then
   echo "Specific theme set, theme switching disabled"
   exit 2
 fi
@@ -31,20 +32,22 @@ for v in $CURRENT $GTK_THEME $ICON_THEME; do
   fi
 done
 
+echo "Current theme is $CURRENT"
+
 # Check which theme we got
 # Lot's of repeating stuff, could be optimized
 if [[ "$CURRENT" != "'prefer-dark'" ]]; then
   # Switching to dark mode
   N_CURRENT=$(replace_light_dark "$CURRENT" "light" "dark")
   N_GTK_THEME=$(replace_light_dark "$GTK_THEME" "light" "dark")
-  N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "light" "dark")
+  #N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "light" "dark")
   sed -i "s#=light#=dark#" "$VIMRC_PATH"
   sed -i "s#$VSCODE_LIGHT#$VSCODE_DARK#" "$VSCODE_PATH"
 else
-  # Switching to dark mode
+  # Switching to light mode
   N_CURRENT=$(replace_light_dark "$CURRENT" "dark" "light")
   N_GTK_THEME=$(replace_light_dark "$GTK_THEME" "dark" "light")
-  N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "dark" "light")
+  #N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "dark" "light")
   sed -i "s#=dark#=light#" "$VIMRC_PATH"
   sed -i "s#$VSCODE_DARK#$VSCODE_LIGHT#" "$VSCODE_PATH"
 fi
