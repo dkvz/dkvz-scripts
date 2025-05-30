@@ -6,6 +6,10 @@
 # Adding quotes will prevent ~ expansion
 VIMRC_PATH=~/.vimrc
 VSCODE_PATH=~/.config/Code/User/settings.json
+# I made Neovim read that file (only on Linux)
+# to determine color scheme
+# I went too far in some places
+LIGHT_STATE_FILE=~/.local/state/dkvz_colorscheme_light
 # The extensions have to be installed, of course:
 VSCODE_DARK="Gruvbox Material Dark"
 VSCODE_LIGHT="Catppuccin Latte"
@@ -43,6 +47,7 @@ if [[ "$CURRENT" != "'prefer-dark'" ]]; then
   #N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "light" "dark")
   sed -i "s#=light#=dark#" "$VIMRC_PATH"
   sed -i "s#$VSCODE_LIGHT#$VSCODE_DARK#" "$VSCODE_PATH"
+  rm -f $LIGHT_STATE_FILE 
 else
   # Switching to light mode
   N_CURRENT=$(replace_light_dark "$CURRENT" "dark" "light")
@@ -50,6 +55,8 @@ else
   #N_ICON_THEME=$(replace_light_dark "$ICON_THEME" "dark" "light")
   sed -i "s#=dark#=light#" "$VIMRC_PATH"
   sed -i "s#$VSCODE_DARK#$VSCODE_LIGHT#" "$VSCODE_PATH"
+  # I write a theme name in there but nvim probably doesn't read it
+  echo "shine" > $LIGHT_STATE_FILE
 fi
 
 # Set the new values for Gnome:
