@@ -1,7 +1,10 @@
-# Some scripts I started gathering
+# Various scripts I use
+Meant for Linux systems. Might work on Mac I don't know.
 
-# Environment variables I use
+# Environment variables
 Should be set in bashrc or default values will apply (use `export VARIABLE_NAME=value`).
+
+None of these are mandatory. I think.
 
 * DELETEME_FILE - Path to the throwable notepad text file (see n.sh)
 * GUI_TEXT_EDITOR - Path to a graphical text editor to use
