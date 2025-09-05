@@ -9,7 +9,8 @@
 
 # Putting $PROFILES_PATH under quote won't expand the
 # home directory "~" character.
-PROFILES_PATH=~/.local/share/remmina/
+DEFAULT_PROFILES_PATH="$HOME/.local/share/remmina/"
+PROFILES_PATH="${REMMINA_PROFILES_PATH:-$DEFAULT_PROFILES_PATH}"
 
 if [[ -z "$1" ]]; then
   echo "No profile name provided, opening remmina..."
