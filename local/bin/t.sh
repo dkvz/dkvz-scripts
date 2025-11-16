@@ -16,6 +16,9 @@ else
       tmux new-session -d
       tmux split-window -h
       tmux select-pane -t 0
+      # For some reason my panes aren't equal in size
+      # without this. Yeah I don't know.
+      tmux select-layout even-horizontal
       tmux a
       ;;
     *)
