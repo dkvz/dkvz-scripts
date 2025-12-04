@@ -5,14 +5,22 @@
 # It's a little weird. I'm a little weird.
 
 DEFAULT_PATH=~/Desktop/deleteme.md
+SCRATCH_DEFAULT_PATH=~/Desktop/scratch.md
 DEFAULT_EDITOR=gedit
 DME_PATH="${DELETEME_FILE:-$DEFAULT_PATH}"
+S_PATH="${SCRATCH_PATH:-$SCRATCH_DEFAULT_PATH}"
 case "$1" in
   -v|v)
     vi "$DME_PATH"
     ;;
+  -sv|sv)
+    vi "$S_PATH"
+    ;;
   -nv|nv)
     nvim "$DME_PATH"
+    ;;
+  -snv|snv)
+    nvim "$S_PATH"
     ;;
   *)
     EDITOR_TO_RUN="${GUI_TEXT_EDITOR:-$DEFAULT_EDITOR}"
