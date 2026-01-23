@@ -47,4 +47,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/toggle-desktop.sh" "$TARGET/toggle-desktop"
   ln -sfv "$PWD/local/bin/reset-dash-to-panel.sh" "$TARGET/reset-dash-to-panel"
   ln -sfv "$PWD/local/bin/change-term-bg.sh" "$TARGET/change-term-bg"
+  ln -sfv "$PWD/local/bin/switch-dpi.sh" "$TARGET/switch-dpi"
 fi
