@@ -22,7 +22,7 @@ if [ "$TEXT_SCALING_CURRENT" = "$TEXT_SCALING_HIGH" ]; then
 elif [ "$TEXT_SCALING_CURRENT" = "$TEXT_SCALING_LOW" ]; then
   echo "Current DPI mode is low, setting to high"
   gsettings set org.gnome.desktop.interface text-scaling-factor "$TEXT_SCALING_HIGH"
-  set_dash_to_panel_size 48
+  set_dash_to_panel_size 40
   reset-dash-to-panel
 else
   echo "Unknown current DPI level of $TEXT_SCALING_CURRENT - Aborting"
