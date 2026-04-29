@@ -32,7 +32,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/scp-old.sh" "$TARGET/scp-old"
   ln -sfv "$PWD/local/bin/yt-audio.sh" "$TARGET/yt-audio"
   ln -sfv "$PWD/local/bin/yt-search.sh" "$TARGET/yt-search"
-  ln -sfv "$PWD/local/bin/ghub.sh" "$TARGET/ghub"
   ln -sfv "$PWD/local/bin/p.sh" "$TARGET/p"
   ln -sfv "$PWD/local/bin/despacito.sh" "$TARGET/despacito"
   ln -sfv "$PWD/local/bin/my.sh" "$TARGET/my"
@@ -48,4 +47,5 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   ln -sfv "$PWD/local/bin/reset-dash-to-panel.sh" "$TARGET/reset-dash-to-panel"
   ln -sfv "$PWD/local/bin/change-term-bg.sh" "$TARGET/change-term-bg"
   ln -sfv "$PWD/local/bin/switch-dpi.sh" "$TARGET/switch-dpi"
+  ln -sfv "$PWD/local/bin/w.sh" "$TARGET/w"
 fi
