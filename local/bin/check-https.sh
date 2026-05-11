@@ -12,11 +12,11 @@ if [[ $# -lt 1 ]]; then
 fi
 
 # Remove the possible http and https from the URL:
-HNAME=`echo "$1" | sed 's#https\?:\/\/##'`
+HNAME=$(echo "$1" | sed 's#https\?:\/\/##')
 
 # s_client opens a connection and waits for your commands
 # Using echo -n supposedly closes the connection afterwards.
-CERT=`echo -n | openssl s_client -connect $HNAME:443 2>/dev/null`
+CERT=$(echo -n | openssl s_client -connect "$HNAME":443 2>/dev/null)
 if [[ $? -eq 0 ]]; then
   # I use xargs here because it trims leading spaces. Yeah.
   echo "$CERT" | grep "Verify return code" | xargs
