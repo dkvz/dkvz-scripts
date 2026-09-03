@@ -22,6 +22,7 @@ url="$1"
 tmpfile=$(mktemp /tmp/rp.XXXXXX.html)
 trap 'rm -f "$tmpfile"' EXIT
 
+echo "Fetching..."
 if wget -q -O "$tmpfile" "$url"; then
   mime=$(file --mime-type -b "$tmpfile")
   if [[ "$mime" != "text/html" && "$mime" != "application/xhtml+xml" ]]; then
@@ -32,8 +33,17 @@ if wget -q -O "$tmpfile" "$url"; then
   mdfile=$(mktemp /tmp/rp.XXXXXX.md)
   trap 'rm -f "$tmpfile" "$mdfile"' EXIT
 
+  echo "Converting..."
+
   # html2text "$tmpfile" >"$mdfile"
   pandoc "$tmpfile" -f html -t gfm -o "$mdfile"
+  # Has better links but escapes all of the single quotes:
+  # pandoc "$tmpfile" -f html -t markdown -o "$mdfile"
+
+  # Run a whole bunch of replaces:
+  perl -0777 -pi -e 's/<\/?(div|span)(\s+[^>]*)?>//gsi' "$mdfile"
+  # If there's more than 3 consecutive lines, remove them:
+  perl -0777 -pi -e 's/\n{3,}/\n\n/g' "$mdfile"
 
   $EDITOR_TO_RUN "$mdfile"
 else
