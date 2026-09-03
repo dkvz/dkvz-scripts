@@ -33,7 +33,7 @@ if wget -q -O "$tmpfile" "$url"; then
   trap 'rm -f "$tmpfile" "$mdfile"' EXIT
 
   # html2text "$tmpfile" >"$mdfile"
-  pandoc "$tmpfile" -f html -t markdown -o "$mdfile"
+  pandoc "$tmpfile" -f html -t gfm -o "$mdfile"
 
   $EDITOR_TO_RUN "$mdfile"
 else
