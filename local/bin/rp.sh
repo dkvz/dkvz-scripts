@@ -9,6 +9,9 @@
 
 set -euo pipefail
 
+DEFAULT_EDITOR=nvim
+EDITOR_TO_RUN="${GUI_TEXT_EDITOR:-$DEFAULT_EDITOR}"
+
 if [[ $# -ne 1 ]]; then
   echo "Usage: $0 <url>" >&2
   echo "Attempts to fetch given URL, convert to markdown then open in editor" >&2
@@ -29,8 +32,10 @@ if wget -q -O "$tmpfile" "$url"; then
   mdfile=$(mktemp /tmp/rp.XXXXXX.md)
   trap 'rm -f "$tmpfile" "$mdfile"' EXIT
 
-  html2text "$tmpfile" >"$mdfile"
-  nvim "$mdfile"
+  # html2text "$tmpfile" >"$mdfile"
+  pandoc "$tmpfile" -f html -t markdown -o "$mdfile"
+
+  $EDITOR_TO_RUN "$mdfile"
 else
   echo "Failed to download URL - Check that it's correct" >&2
 fi
